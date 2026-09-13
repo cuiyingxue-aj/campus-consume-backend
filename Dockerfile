@@ -1,6 +1,6 @@
 # 微信云托管 / 通用容器部署
 # 使用完整版 node 镜像（自带 g++、make、python3，便于编译 better-sqlite3 原生模块）
-FROM node:20
+FROM node:22
 
 WORKDIR /app
 
