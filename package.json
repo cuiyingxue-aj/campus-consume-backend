@@ -1,0 +1,22 @@
+{
+  "name": "campus-consume-mp-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "校园消费小程序独立后端（Express + SQLite，端口 3100）",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "init": "node scripts/init-db.js",
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "reset": "node scripts/init-db.js --force"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

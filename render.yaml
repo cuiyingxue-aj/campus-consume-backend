@@ -1,0 +1,19 @@
+# Render 蓝图配置（把本目录推到 GitHub 后，Render 可一键识别并部署）
+# 文档：https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: campus-consume-backend
+    runtime: node
+    # 国内访问推荐新加坡节点；也可改为 oregon / frankfurt
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # 本地没有真实小程序 AppID，保持 mock，便于登录联调
+      - key: MOCK_WECHAT
+        value: "true"
